@@ -52,3 +52,5 @@ function apply(size = 16) {
     setGridTemplateColumns(size);
     generateGridElements(size);
 }
+
+apply(size = 16);

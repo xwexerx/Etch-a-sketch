@@ -8,14 +8,21 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="grid-container"></div>
-    <div class="box">
-        <div class="slider">
-            <input type="range" min="1" max="64" value="16">
+    <main>
+        <div id="menu-wrapper">
+            <input type="color" value="#ff0000" id="color-picker">
+            <div class="box">
+                <div class="slider">
+                    <input type="range" min="1" max="64" value="16" id="input-slider">
+                </div>
+                <div class="value">16</div>
+            </div>
+            <button id="apply-button">Apply</button>
         </div>
-        <div class="value">16</div>
-    </div>
-    <button>Apply</button>
+        <div id="grid-wrapper">
+            <div id="grid-container"></div>
+        </div>
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>

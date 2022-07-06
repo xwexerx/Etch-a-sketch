@@ -1,14 +1,18 @@
 const grid = document.getElementById("grid-container");
-const slider = document.querySelector("input");
+grid.setAttribute("draggable", "false");
+const slider = document.querySelector("#input-slider");
 const value = document.querySelector(".value");
-const button = document.querySelector("button");
+const applyButton = document.querySelector("#apply-button");
+const colorPicker = document.querySelector("#color-picker");
+
+
+// Connect the slider values to the value text element
 value.textContent = slider.value;
 slider.oninput = function() {
     value.textContent = this.value;
 }
-button.addEventListener("click", () => play(slider.value));
 
-
+applyButton.addEventListener("click", () => apply(slider.value));
 
 // Determine how many columns the grid will have based on the size
 function setGridTemplateColumns(size) {
@@ -24,19 +28,26 @@ function generateGridElements(size) {
     for (let i = 0; i < (size*size); i++) {
         const div = document.createElement("div");
         div.style.cssText = `border: 1px solid black; height: ${600/size}px; width: ${600/size}px`;
-        div.classList.add("smallDiv");
-        div.addEventListener("mouseover", () => div.style.backgroundColor = "red");
+        div.addEventListener("click", () => div.style.backgroundColor = `${colorPicker.value}`);
+        div.addEventListener("mouseover", function(e) {
+            if (e.buttons == 1) {
+                this.style.backgroundColor = `${colorPicker.value}`
+            };
+        });
+        div.setAttribute("draggable", "false");
         grid.appendChild(div);
     }
 }
 
+// Remove all children of the grid element
 function clearGrid() {
     while (grid.firstChild) {
         grid.firstChild.remove()
     }    
 }
 
-function play(size = 16) {
+// Clears out the old grid and creates a new one with the size specified by the user
+function apply(size = 16) {
     clearGrid();
     setGridTemplateColumns(size);
     generateGridElements(size);

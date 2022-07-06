@@ -10,8 +10,14 @@ html, body {
     place-items: center;
 }
 
+h1 {
+    font-family: sans-serif;
+}
+
 main {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
 }
 
@@ -25,7 +31,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    justify-content: center;
+    gap: 50px;
 }
 
 .box {
@@ -64,8 +71,8 @@ main {
     text-align: center;
 }
 
-#apply-button {
-    font-size: 30px;
+#clear-button {
+    font-size: 16px;
     font-weight: 600;
     font-family: sans-serif;
     color: #3498db;

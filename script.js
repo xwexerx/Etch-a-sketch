@@ -2,7 +2,7 @@ const grid = document.getElementById("grid-container");
 grid.setAttribute("draggable", "false");
 const slider = document.querySelector("#input-slider");
 const value = document.querySelector(".value");
-const applyButton = document.querySelector("#apply-button");
+const clearButton = document.querySelector("#clear-button");
 const colorPicker = document.querySelector("#color-picker");
 
 
@@ -12,7 +12,7 @@ slider.oninput = function() {
     value.textContent = this.value;
 }
 
-applyButton.addEventListener("click", () => apply(slider.value));
+clearButton.addEventListener("click", () => apply(slider.value));
 
 // Determine how many columns the grid will have based on the size
 function setGridTemplateColumns(size) {
@@ -26,7 +26,7 @@ function setGridTemplateColumns(size) {
 // Generate new grid elements
 function generateGridElements(size) {
     for (let i = 0; i < (size*size); i++) {
-        const div = document.createElement("div");
+        const div = document.createElement("div");    
         div.style.cssText = `border: 1px solid black; height: ${600/size}px; width: ${600/size}px`;
         div.addEventListener("click", () => div.style.backgroundColor = `${colorPicker.value}`);
         div.addEventListener("mouseover", function(e) {

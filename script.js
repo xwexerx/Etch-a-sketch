@@ -53,4 +53,4 @@ function apply(size = 16) {
     generateGridElements(size);
 }
 
-apply(size = 16);
+apply(16);

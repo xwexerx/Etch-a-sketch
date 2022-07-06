@@ -18,3 +18,6 @@ Project was created with:
 	
 ## Live Preview
 You can preview the website [Here](https://xwexerx.github.io/Etch-a-sketch/)
+
+## Gallery
+![Completed Project Image](/img/etch-a-sketch.png)

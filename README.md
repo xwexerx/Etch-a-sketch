@@ -20,4 +20,4 @@ Project was created with:
 You can preview the website [Here](https://xwexerx.github.io/Etch-a-sketch/)
 
 ## Gallery
-![Completed Project Image](/img/Etch-a-Sketch.png)
+![Completed Project Image](/img/etch-a-sketch.png)

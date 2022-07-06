@@ -1,4 +1,14 @@
 const grid = document.getElementById("grid-container");
+const slider = document.querySelector("input");
+const value = document.querySelector(".value");
+const button = document.querySelector("button");
+value.textContent = slider.value;
+slider.oninput = function() {
+    value.textContent = this.value;
+}
+button.addEventListener("click", () => play(slider.value));
+
+
 
 // Determine how many columns the grid will have based on the size
 function setGridTemplateColumns(size) {
@@ -20,9 +30,14 @@ function generateGridElements(size) {
     }
 }
 
+function clearGrid() {
+    while (grid.firstChild) {
+        grid.firstChild.remove()
+    }    
+}
+
 function play(size = 16) {
+    clearGrid();
     setGridTemplateColumns(size);
     generateGridElements(size);
 }
-
-play(24);

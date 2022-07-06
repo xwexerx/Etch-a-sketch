@@ -17,4 +17,4 @@ Project was created with:
 * JavaScript
 	
 ## Live Preview
-You can preview the website [Here](https://xwexerx.github.io/rock-paper-scissors/)
+You can preview the website [Here](https://xwexerx.github.io/Etch-a-sketch/)
